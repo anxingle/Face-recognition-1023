@@ -97,8 +97,7 @@ void CSecond::OnBnClickedOpen()
 void CSecond::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: Add your message handler code here and/or call default
-	// TODO: Add your message handler code here and/or call default  
-	/************************************************************************/
+	
 	/* œ‘ æ…„œÒÕ∑                                                           */
 	/************************************************************************/
 	IplImage* m_Frame;
