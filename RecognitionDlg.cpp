@@ -7,6 +7,7 @@
 #include "RecognitionDlg.h"
 #include "afxdialogex.h"
 #include "MySheet.h"
+#include "CvvImage.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -29,6 +30,8 @@ public:
 // 实现
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+//	afx_msg void OnTimer(UINT_PTR nIDEvent);
 };
 
 CAboutDlg::CAboutDlg() : CDialogEx(CAboutDlg::IDD)
@@ -41,6 +44,7 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 }
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
+//	ON_WM_TIMER()
 END_MESSAGE_MAP()
 
 
@@ -66,6 +70,7 @@ BEGIN_MESSAGE_MAP(CRecognitionDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON2, &CRecognitionDlg::OnBnClickedButton2)
 	ON_BN_CLICKED(IDCCANCEL, &CRecognitionDlg::OnBnClickedCcancel)
+	ON_WM_TIMER()
 END_MESSAGE_MAP()
 
 
@@ -101,6 +106,7 @@ BOOL CRecognitionDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
+
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -170,3 +176,35 @@ void CRecognitionDlg::OnBnClickedCcancel()
 	// TODO: 在此添加控件通知处理程序代码
 	SendMessage(WM_CLOSE);
 }
+
+/*
+void CRecognitionDlg::OnTimer(UINT_PTR nIDEvent)
+{
+	// TODO: Add your message handler code here and/or call default
+	// TODO: Add your message handler code here and/or call default  
+	*******************************************************************
+	 显示摄像头                                                          
+	*********************************************************************
+	IplImage* m_Frame;
+	m_Frame = cvQueryFrame(capture);
+	CvvImage m_CvvImage;
+	m_CvvImage.CopyOf(m_Frame, 1);
+	if (true)
+	{
+		m_CvvImage.DrawToHDC(hDC, &rect);
+		//cvWaitKey(10);  
+	}
+
+	CDialogEx::OnTimer(nIDEvent);
+
+	//CDialogEx::OnTimer(nIDEvent);
+}
+
+
+void CAboutDlg::OnTimer(UINT_PTR nIDEvent)
+{
+// TODO: Add your message handler code here and/or call default
+
+CDialogEx::OnTimer(nIDEvent);
+}
+*/

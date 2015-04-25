@@ -32,4 +32,5 @@ protected:
 public:
 	afx_msg void OnBnClickedButton2();
 	afx_msg void OnBnClickedCcancel();
+	//afx_msg void OnTimer(UINT_PTR nIDEvent);
 };

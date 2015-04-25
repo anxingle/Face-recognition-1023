@@ -54,6 +54,9 @@
     <ClInclude Include="MySheet.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CvvImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Recognition.cpp">
@@ -77,6 +80,9 @@
     <ClCompile Include="MySheet.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CvvImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Recognition.rc">
@@ -85,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\a.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\Users\Desktop\a.bmp">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
