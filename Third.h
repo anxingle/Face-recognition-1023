@@ -1,6 +1,6 @@
 #pragma once
 #include "afxwin.h"
-
+#include <string.h>
 
 // CThird 对话框
 
@@ -14,7 +14,6 @@ public:
 
 // 对话框数据
 	enum { IDD = IDD_Third };
-//	CBrush m_brBk;
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
@@ -22,7 +21,20 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	virtual BOOL OnSetActive();
-//	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 	CStatic m_myPan;
-	afx_msg void OnBnClickedReload();
+	/*
+    string idp[3];
+	idp[0] = "IDB_BITMAP1";
+	idp[1] = "IDB_BITMAP2";
+	idp[2] = "IDB_BITMAP3";   
+	char idpic[6][12] = {"IDB_BITMAP1","IDB_BITMAP2","IDB_BITMAP3","IDB_BITMAP4","IDB_BITMAP5","IDB_BITMAP"};
+	*/
+	afx_msg void OnBnClickedButton1();
+	//CString pan[3];
+	int index;
+	//CStringArray asp;
+
+	// char idp[3][12] = {"IDB_BITMAP1","IDB_BITMAP2","IDB_BITMAP3"};
+	afx_msg void OnBnClickedButton3();
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 };

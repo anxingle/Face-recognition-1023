@@ -96,10 +96,49 @@
     <Image Include="..\..\Users\Desktop\a.bmp">
       <Filter>资源文件</Filter>
     </Image>
-    <Image Include="..\..\Users\Desktop\mypan.bmp">
+    <Image Include="..\mypan.bmp">
       <Filter>资源文件</Filter>
     </Image>
-    <Image Include="..\..\Users\Desktop\b.bmp">
+    <Image Include="..\b.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\3.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\4.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\5.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\7.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\6.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\2.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\entertainment\GivePan\1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\entertainment\GivePan\6.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\entertainment\GivePan\2.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\entertainment\GivePan\3.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\entertainment\GivePan\4.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\entertainment\GivePan\5.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\entertainment\GivePan\7.bmp">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

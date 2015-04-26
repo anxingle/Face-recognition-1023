@@ -1,0 +1,9 @@
+﻿Build started 4/27/2015 12:03:36 AM.
+     1>Project "D:\workspace\face_recognize\Recognition.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         Recognition.vcxproj -> D:\workspace\face_recognize\Release\Recognition.exe
+     1>Done Building Project "D:\workspace\face_recognize\Recognition.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.06
