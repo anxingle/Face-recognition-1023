@@ -131,6 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\Users\Desktop\a.bmp" />
+    <Image Include="..\..\Users\Desktop\b.bmp" />
+    <Image Include="..\..\Users\Desktop\mypan.bmp" />
     <Image Include="..\a.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
