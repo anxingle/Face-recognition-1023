@@ -27,7 +27,13 @@ CThird::CThird()
 	pan[2] = "IDB_BITMAP3";
 	*/
 	index = 0;
+	instr_num = 0;
 	m_font.CreatePointFont(200, _T("Î¢ÈíÑÅºÚ"));
+	instr[0] =_T("ÇëÕ£×óÑÛ");
+	instr[1] = _T("ÇëÕ£ÓÒÑÛ");
+	instr[2] = _T("ÇëÕÅ×ì");
+	instr[3] = _T("Çë±ÕÑÛ");
+	instr[4] = _T("ÇëÎ¢Ð¦");
 	}
 
 CThird::~CThird()
@@ -99,6 +105,11 @@ BOOL CThird::OnSetActive()
 
 void CThird::OnBnClickedButton1()
 {
+	instr_num++;
+	if (instr_num == 5)
+		instr_num = 0;
+	SetDlgItemText(IDC_third_first,instr[instr_num]);
+	/*
 	// TODO: Add your control notification handler code here
 	CBitmap   bitmap;
 	HBITMAP hBmp;
@@ -111,6 +122,7 @@ void CThird::OnBnClickedButton1()
 
 	hBmp = (HBITMAP)bitmap.GetSafeHandle();
 	m_myPan.SetBitmap(hBmp);
+	*/
 }
 
 
@@ -177,7 +189,7 @@ HBRUSH CThird::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	if (pWnd->GetDlgCtrlID() == IDC_third_first)
 	{
 		pDC->SelectObject(&m_font);
-		pDC->SetWindow
+		//pDC->SetWindow
 	}
 		// TODO:  Return a different brush if the default is not desired
 	return hbr;

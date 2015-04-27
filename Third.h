@@ -13,6 +13,7 @@ public:
 	virtual ~CThird();
 private:
 	CFont m_font;
+	CString instr[5];
 // 对话框数据
 	enum { IDD = IDD_Third };
 
@@ -33,6 +34,7 @@ public:
 	afx_msg void OnBnClickedButton1();
 	//CString pan[3];
 	int index;
+	int instr_num;
 	//CStringArray asp;
 
 	// char idp[3][12] = {"IDB_BITMAP1","IDB_BITMAP2","IDB_BITMAP3"};
