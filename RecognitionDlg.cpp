@@ -7,6 +7,7 @@
 #include "RecognitionDlg.h"
 #include "afxdialogex.h"
 #include "MySheet.h"
+#include "LogMySheet.h"
 #include "CvvImage.h"
 
 #ifdef _DEBUG
@@ -32,6 +33,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 //	afx_msg void OnTimer(UINT_PTR nIDEvent);
+//	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };
 
 CAboutDlg::CAboutDlg() : CDialogEx(CAboutDlg::IDD)
@@ -45,6 +47,7 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 //	ON_WM_TIMER()
+//	ON_WM_CTLCOLOR()
 END_MESSAGE_MAP()
 
 
@@ -69,8 +72,9 @@ BEGIN_MESSAGE_MAP(CRecognitionDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON2, &CRecognitionDlg::OnBnClickedButton2)
-	ON_BN_CLICKED(IDCCANCEL, &CRecognitionDlg::OnBnClickedCcancel)
+//	ON_BN_CLICKED(IDCCANCEL, &CRecognitionDlg::OnBnClickedCcancel)
 	ON_WM_TIMER()
+	ON_BN_CLICKED(IDC_BUTTON4, &CRecognitionDlg::OnBnClickedButton4)
 END_MESSAGE_MAP()
 
 
@@ -171,11 +175,11 @@ void CRecognitionDlg::OnBnClickedButton2()
 }
 
 
-void CRecognitionDlg::OnBnClickedCcancel()
-{
-	// TODO: 在此添加控件通知处理程序代码
-	SendMessage(WM_CLOSE);
-}
+//void CRecognitionDlg::OnBnClickedCcancel()
+//{
+//	// TODO: 在此添加控件通知处理程序代码
+//	SendMessage(WM_CLOSE);
+//}
 
 /*
 void CRecognitionDlg::OnTimer(UINT_PTR nIDEvent)
@@ -208,3 +212,22 @@ void CAboutDlg::OnTimer(UINT_PTR nIDEvent)
 CDialogEx::OnTimer(nIDEvent);
 }
 */
+
+void CRecognitionDlg::OnBnClickedButton4()
+{
+	CLogMySheet sheet(_T(""));
+	sheet.SetWizardMode();
+	sheet.DoModal();
+	// TODO: Add your control notification handler code here
+}
+
+
+//HBRUSH CAboutDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
+//{
+//	HBRUSH hbr = CDialogEx::OnCtlColor(pDC, pWnd, nCtlColor);
+//
+//	// TODO:  Change any attributes of the DC here
+//
+//	// TODO:  Return a different brush if the default is not desired
+//	return hbr;
+//}

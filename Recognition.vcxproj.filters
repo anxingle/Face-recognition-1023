@@ -57,6 +57,15 @@
     <ClInclude Include="CvvImage.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LogFirst.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LogSecond.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LogMySheet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Recognition.cpp">
@@ -81,6 +90,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CvvImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LogFirst.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LogSecond.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LogMySheet.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

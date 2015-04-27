@@ -104,6 +104,9 @@
   <ItemGroup>
     <ClInclude Include="CvvImage.h" />
     <ClInclude Include="First.h" />
+    <ClInclude Include="LogFirst.h" />
+    <ClInclude Include="LogMySheet.h" />
+    <ClInclude Include="LogSecond.h" />
     <ClInclude Include="MySheet.h" />
     <ClInclude Include="Recognition.h" />
     <ClInclude Include="RecognitionDlg.h" />
@@ -116,6 +119,9 @@
   <ItemGroup>
     <ClCompile Include="CvvImage.cpp" />
     <ClCompile Include="First.cpp" />
+    <ClCompile Include="LogFirst.cpp" />
+    <ClCompile Include="LogMySheet.cpp" />
+    <ClCompile Include="LogSecond.cpp" />
     <ClCompile Include="MySheet.cpp" />
     <ClCompile Include="Recognition.cpp" />
     <ClCompile Include="RecognitionDlg.cpp" />
