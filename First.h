@@ -20,4 +20,8 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	virtual BOOL OnSetActive();
+private:
+	CFont m_font;
+public:
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };

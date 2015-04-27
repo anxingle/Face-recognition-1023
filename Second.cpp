@@ -20,7 +20,7 @@ IMPLEMENT_DYNAMIC(CSecond, CPropertyPage)
 CSecond::CSecond()
 	: CPropertyPage(CSecond::IDD)
 {
-
+	m_font.CreatePointFont(200, _T("Î¢ÈíÑÅºÚ"));
 }
 
 CSecond::~CSecond()
@@ -36,6 +36,7 @@ void CSecond::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CSecond, CPropertyPage)
 //	ON_BN_CLICKED(IDC_OPEN, &CSecond::OnBnClickedOpen)
 	ON_WM_TIMER()
+	ON_WM_CTLCOLOR()
 END_MESSAGE_MAP()
 
 
@@ -137,4 +138,16 @@ void CSecond::OnTimer(UINT_PTR nIDEvent)
 		//cvWaitKey(10);  
 	}
 	CPropertyPage::OnTimer(nIDEvent);
+}
+
+
+HBRUSH CSecond::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
+{
+	HBRUSH hbr = CPropertyPage::OnCtlColor(pDC, pWnd, nCtlColor);
+
+	// TODO:  Change any attributes of the DC here
+	if (pWnd->GetDlgCtrlID() == IDC_second_first)
+		pDC->SelectObject(&m_font);
+	// TODO:  Return a different brush if the default is not desired
+	return hbr;
 }

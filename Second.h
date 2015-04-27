@@ -18,8 +18,11 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Ö§³Ö
 
 	DECLARE_MESSAGE_MAP()
+private:
+	CFont m_font;
 public:
 	virtual BOOL OnSetActive();
 //	afx_msg void OnBnClickedOpen();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };

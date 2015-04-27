@@ -27,6 +27,7 @@ CThird::CThird()
 	pan[2] = "IDB_BITMAP3";
 	*/
 	index = 0;
+	m_font.CreatePointFont(200, _T("Î¢ÈíÑÅºÚ"));
 	}
 
 CThird::~CThird()
@@ -45,6 +46,7 @@ BEGIN_MESSAGE_MAP(CThird, CPropertyPage)
 //	ON_BN_CLICKED(IDC_BUTTON3, &CThird::OnBnClickedButton3)
 	ON_WM_TIMER()
 	ON_STN_CLICKED(IDC_PIC3, &CThird::OnStnClickedPic3)
+	ON_WM_CTLCOLOR()
 END_MESSAGE_MAP()
 
 
@@ -164,4 +166,19 @@ void CThird::OnTimer(UINT_PTR nIDEvent)
 void CThird::OnStnClickedPic3()
 {
 	// TODO: Add your control notification handler code here
+}
+
+
+HBRUSH CThird::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
+{
+	HBRUSH hbr = CPropertyPage::OnCtlColor(pDC, pWnd, nCtlColor);
+
+	// TODO:  Change any attributes of the DC here
+	if (pWnd->GetDlgCtrlID() == IDC_third_first)
+	{
+		pDC->SelectObject(&m_font);
+		pDC->SetWindow
+	}
+		// TODO:  Return a different brush if the default is not desired
+	return hbr;
 }

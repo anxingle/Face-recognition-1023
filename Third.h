@@ -11,7 +11,8 @@ class CThird : public CPropertyPage
 public:
 	CThird();
 	virtual ~CThird();
-
+private:
+	CFont m_font;
 // 对话框数据
 	enum { IDD = IDD_Third };
 
@@ -38,4 +39,5 @@ public:
 //	afx_msg void OnBnClickedButton3();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	afx_msg void OnStnClickedPic3();
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };
