@@ -42,8 +42,9 @@ void CThird::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CThird, CPropertyPage)
 	ON_BN_CLICKED(IDC_BUTTON1, &CThird::OnBnClickedButton1)
-	ON_BN_CLICKED(IDC_BUTTON3, &CThird::OnBnClickedButton3)
+//	ON_BN_CLICKED(IDC_BUTTON3, &CThird::OnBnClickedButton3)
 	ON_WM_TIMER()
+	ON_STN_CLICKED(IDC_PIC3, &CThird::OnStnClickedPic3)
 END_MESSAGE_MAP()
 
 
@@ -62,7 +63,32 @@ BOOL CThird::OnSetActive()
 	//pDC =GetDC();  
 	hDC_2 = pDC_2->GetSafeHdc();
 	pwnd_2->GetClientRect(&rect_2);
+	// 这些程序用来显示摄像头
+	if (!capture_2)
+	{
+		capture_2 = cvCaptureFromCAM(0);
+		//AfxMessageBox("OK");  
+	}
 
+	if (!capture_2)
+	{
+		AfxMessageBox(_T("无法打开摄像头"));
+		return 0;
+	}
+
+	// 测试  
+	IplImage* m_Frame;
+	m_Frame = cvQueryFrame(capture_2);
+	CvvImage m_CvvImage;
+	m_CvvImage.CopyOf(m_Frame, 1);
+	if (true)
+	{
+		m_CvvImage.DrawToHDC(hDC_2, &rect_2);
+		//cvWaitKey(10);  
+	}
+
+	// 设置计时器,每10ms触发一次事件  
+	SetTimer(1, 10, NULL);
 
 
 	return CPropertyPage::OnSetActive();
@@ -86,35 +112,35 @@ void CThird::OnBnClickedButton1()
 }
 
 
-void CThird::OnBnClickedButton3()
-{
-	// TODO: Add your control notification handler code here
-	if (!capture_2)
-	{
-		capture_2 = cvCaptureFromCAM(0);
-		//AfxMessageBox("OK");  
-	}
-
-	if (!capture_2)
-	{
-		AfxMessageBox(_T("无法打开摄像头"));
-		return;
-	}
-
-	// 测试  
-	IplImage* m_Frame;
-	m_Frame = cvQueryFrame(capture_2);
-	CvvImage m_CvvImage;
-	m_CvvImage.CopyOf(m_Frame, 1);
-	if (true)
-	{
-		m_CvvImage.DrawToHDC(hDC_2, &rect_2);
-		//cvWaitKey(10);  
-	}
-
-	// 设置计时器,每10ms触发一次事件  
-	SetTimer(1, 10, NULL);
-}
+//void CThird::OnBnClickedButton3()
+//{
+//	// TODO: Add your control notification handler code here
+//	if (!capture_2)
+//	{
+//		capture_2 = cvCaptureFromCAM(0);
+//		//AfxMessageBox("OK");  
+//	}
+//
+//	if (!capture_2)
+//	{
+//		AfxMessageBox(_T("无法打开摄像头"));
+//		return;
+//	}
+//
+//	// 测试  
+//	IplImage* m_Frame;
+//	m_Frame = cvQueryFrame(capture_2);
+//	CvvImage m_CvvImage;
+//	m_CvvImage.CopyOf(m_Frame, 1);
+//	if (true)
+//	{
+//		m_CvvImage.DrawToHDC(hDC_2, &rect_2);
+//		//cvWaitKey(10);  
+//	}
+//
+//	// 设置计时器,每10ms触发一次事件  
+//	SetTimer(1, 10, NULL);
+//}
 
 
 void CThird::OnTimer(UINT_PTR nIDEvent)
@@ -132,4 +158,10 @@ void CThird::OnTimer(UINT_PTR nIDEvent)
 		//cvWaitKey(10);  
 	}
 	CPropertyPage::OnTimer(nIDEvent);
+}
+
+
+void CThird::OnStnClickedPic3()
+{
+	// TODO: Add your control notification handler code here
 }

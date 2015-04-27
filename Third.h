@@ -35,6 +35,7 @@ public:
 	//CStringArray asp;
 
 	// char idp[3][12] = {"IDB_BITMAP1","IDB_BITMAP2","IDB_BITMAP3"};
-	afx_msg void OnBnClickedButton3();
+//	afx_msg void OnBnClickedButton3();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnStnClickedPic3();
 };

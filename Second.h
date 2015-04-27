@@ -20,6 +20,6 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	virtual BOOL OnSetActive();
-	afx_msg void OnBnClickedOpen();
+//	afx_msg void OnBnClickedOpen();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 };

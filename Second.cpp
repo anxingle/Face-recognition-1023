@@ -34,7 +34,7 @@ void CSecond::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CSecond, CPropertyPage)
-	ON_BN_CLICKED(IDC_OPEN, &CSecond::OnBnClickedOpen)
+//	ON_BN_CLICKED(IDC_OPEN, &CSecond::OnBnClickedOpen)
 	ON_WM_TIMER()
 END_MESSAGE_MAP()
 
@@ -48,7 +48,7 @@ BOOL CSecond::OnSetActive()
 	CPropertySheet * psheet=(CPropertySheet*)GetParent();
 	psheet->SetWizardButtons(PSWIZB_NEXT|PSWIZB_BACK);
 
-	SetDlgItemText(IDC_STATIC,_T("Who Are U?"));
+	SetDlgItemText(IDC_STATIC,_T("请将面部朝向摄像头"));
 
 
 	pwnd = GetDlgItem(IDC_PIC);
@@ -57,40 +57,67 @@ BOOL CSecond::OnSetActive()
 	//pDC =GetDC();  
 	hDC = pDC->GetSafeHdc();
 	pwnd->GetClientRect(&rect);
-
-	return CPropertyPage::OnSetActive();
-}
-
-
-void CSecond::OnBnClickedOpen()
-{
+	
 	// TODO: Add your control notification handler code here
 	if (!capture)
 	{
-		capture = cvCaptureFromCAM(0);
-		//AfxMessageBox("OK");  
+	capture = cvCaptureFromCAM(0);
+	//AfxMessageBox("OK");
 	}
 
 	if (!capture)
 	{
-		AfxMessageBox(_T("无法打开摄像头"));
-		return;
+	AfxMessageBox(_T("无法打开摄像头"));
+	return 0;
 	}
 
-	// 测试  
+	// 测试
 	IplImage* m_Frame;
 	m_Frame = cvQueryFrame(capture);
 	CvvImage m_CvvImage;
 	m_CvvImage.CopyOf(m_Frame, 1);
 	if (true)
 	{
-		m_CvvImage.DrawToHDC(hDC, &rect);
-		//cvWaitKey(10);  
+	m_CvvImage.DrawToHDC(hDC, &rect);
+	//cvWaitKey(10);
 	}
 
-	// 设置计时器,每10ms触发一次事件  
+	// 设置计时器,每10ms触发一次事件
 	SetTimer(1, 10, NULL);
+	
+	return CPropertyPage::OnSetActive();
 }
+
+
+//void CSecond::OnBnClickedOpen()
+//{
+//	// TODO: Add your control notification handler code here
+//	if (!capture)
+//	{
+//		capture = cvCaptureFromCAM(0);
+//		//AfxMessageBox("OK");  
+//	}
+//
+//	if (!capture)
+//	{
+//		AfxMessageBox(_T("无法打开摄像头"));
+//		return;
+//	}
+//
+//	// 测试  
+//	IplImage* m_Frame;
+//	m_Frame = cvQueryFrame(capture);
+//	CvvImage m_CvvImage;
+//	m_CvvImage.CopyOf(m_Frame, 1);
+//	if (true)
+//	{
+//		m_CvvImage.DrawToHDC(hDC, &rect);
+//		//cvWaitKey(10);  
+//	}
+//
+//	// 设置计时器,每10ms触发一次事件  
+//	SetTimer(1, 10, NULL);
+//}
 
 
 
