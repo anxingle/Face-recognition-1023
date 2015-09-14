@@ -66,6 +66,12 @@
     <ClInclude Include="LogMySheet.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="FaceRetrieve_Video.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="asmlibrary.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Recognition.cpp">

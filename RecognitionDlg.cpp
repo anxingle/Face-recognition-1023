@@ -9,6 +9,7 @@
 #include "MySheet.h"
 #include "LogMySheet.h"
 #include "CvvImage.h"
+#include "FaceRetrieve_Video.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

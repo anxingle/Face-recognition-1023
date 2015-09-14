@@ -1,0 +1,2 @@
+-0.893744 0 0 6 9 12 -1 0 -1 21 -1  one feature with 50% fp rate
+1.09186 1 0 6 9 12 -1 6 -1 8 -1 one feature with 75% fp rate

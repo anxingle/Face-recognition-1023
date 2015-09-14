@@ -72,7 +72,7 @@ BOOL CThird::OnSetActive()
 	hDC_2 = pDC_2->GetSafeHdc();
 	pwnd_2->GetClientRect(&rect_2);
 	// 这些程序用来显示摄像头
-	if (!capture_2)
+/*	if (!capture_2)
 	{
 		capture_2 = cvCaptureFromCAM(0);
 		//AfxMessageBox("OK");  
@@ -83,7 +83,7 @@ BOOL CThird::OnSetActive()
 		AfxMessageBox(_T("无法打开摄像头"));
 		return 0;
 	}
-
+*/
 	// 测试  
 	IplImage* m_Frame;
 	m_Frame = cvQueryFrame(capture_2);

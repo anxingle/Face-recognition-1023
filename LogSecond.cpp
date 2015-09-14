@@ -91,7 +91,7 @@ BOOL CLogSecond::OnSetActive()
 	SetTimer(1, 10, NULL);
 
 
-	return CPropertyPage::OnSetActive();
+	//return CPropertyPage::OnSetActive();
 	return CPropertyPage::OnSetActive();
 }
 
